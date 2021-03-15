@@ -1,0 +1,40 @@
+.container{
+    margin: auto;
+    margin-top: 50px;
+    width: 900px;
+    box-shadow: 5px 5px 5px 1px darkgrey;
+}
+
+.row{
+    border: 1px solid rgb(212, 212, 212);
+}
+
+.padding10 {
+    padding: 0px 10px;
+}
+
+.width60{
+    width: 60%;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bold{
+    font-weight: bolder;
+}
+
+.width40{
+    width: 40%;
+}
+
+.height50{
+    height: 50px;
+}
+
+.back_grey {
+    background-color: lightgrey;
+}

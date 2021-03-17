@@ -1,3 +1,4 @@
 import { TextField } from './TextField';
+import { SliderField } from './SliderField';
 
-export { TextField };
+export { TextField, SliderField };

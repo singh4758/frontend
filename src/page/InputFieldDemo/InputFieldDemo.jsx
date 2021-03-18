@@ -1,5 +1,10 @@
 import { React, PureComponent } from 'react';
-import { SelectField, TextField, RadioGroup } from '../../Components';
+import {
+  SelectField,
+  TextField,
+  RadioGroup,
+  ButtonField,
+} from '../../Components';
 
 export default class InputFieldDemo extends PureComponent {
   constructor() {
@@ -49,14 +54,37 @@ export default class InputFieldDemo extends PureComponent {
     }
   }
 
-  render() {
+  buttonClick = () => {
     console.log(this.state);
-    const { playerName, sport } = this.state;
+  }
+
+  render() {
+    const {
+      playerName,
+      sport,
+      cricket,
+      football,
+    } = this.state;
+
+    const error = (!playerName || !sport || (!cricket && !football));
+    console.log(this.state);
     return (
       <div className="InputFieldDemo">
         <TextField textField={this.textField} playerName={playerName} />
         <SelectField selectField={this.selectField} sport={sport} />
-        <RadioGroup changeRadio={this.radioField} sport={sport} />
+        <RadioGroup
+          changeRadio={this.radioField}
+          sport={sport}
+          cricket={cricket}
+          football={football}
+        />
+        <ButtonField
+          value="Submit"
+          color="primary"
+          style={{}}
+          disabled={error}
+          onClick={this.buttonClick}
+        />
       </div>
     );
   }

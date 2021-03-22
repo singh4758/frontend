@@ -1,9 +1,10 @@
 import React from 'react';
-import { TextFieldDemo } from './pages';
+import { SliderFieldDemo, TextFieldDemo } from './pages';
 
 function App() {
   return (
     <div className="App">
+      <SliderFieldDemo />
       <TextFieldDemo />
     </div>
   );

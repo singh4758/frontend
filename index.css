@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -11,7 +12,6 @@ body{
 .container{
     margin: auto;
     margin-top: 50px;
-    width: 1100px;
     background-color: white;
     box-shadow: 5px 5px 5px 1px darkgrey;
 }
@@ -123,4 +123,47 @@ h5{
 
 p{
     font-size: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .hidden{
+        display: none;
+    }
+
+    .height111{
+        height: 111vh;
+    }
+
+}
+
+@media only screen and (max-width:660px) {
+    .block {
+        display: block;
+        width: 100%;
+    }
+
+    .width100{
+        width: 100%;
+    }
+
+    .imgHvr{
+        width: 250px;
+        height: 250px;
+        box-sizing: border-box;
+        margin: auto;
+    }
+    
+    .imgHvr:hover{
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border: 1px solid lightgray;
+        box-sizing: border-box;
+        background-color: lightgrey;
+    }
+
+    .imgHvr img{
+        width: 200px;
+        height: 200px;
+    }
 }

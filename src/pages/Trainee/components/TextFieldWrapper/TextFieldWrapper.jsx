@@ -20,6 +20,9 @@ const TextFieldWrapper = ({
   }
   return (
     <TextField
+      InputLabelProps={{
+        shrink: true,
+      }}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...configureTextField}
       fullWidth

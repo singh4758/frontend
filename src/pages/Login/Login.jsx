@@ -4,6 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import * as Yup from 'yup';
 import { PropTypes } from 'prop-types';
 import { Formik, Form } from 'formik';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import EmailIcon from '@material-ui/icons/Email';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import { TextFieldWrapper as TextField } from '../Trainee/components/TextFieldWrapper';
 
 const style = (theme) => ({
@@ -89,20 +92,33 @@ class Login extends PureComponent {
                           <TextField
                             name="email"
                             type="email"
-                            placeholder="Enter Email"
+                            label="Email*"
+                            InputProps={{
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <EmailIcon />
+                                </InputAdornment>
+                              ),
+                            }}
                           />
                         </Grid>
                         <Grid item xs={12}>
                           <TextField
                             name="password"
                             type="password"
-                            placeholder="Enter Password"
+                            label="Password*"
+                            InputProps={{
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <VisibilityOffIcon />
+                                </InputAdornment>
+                              ),
+                            }}
                           />
                         </Grid>
                         <Grid item xs={12}>
                           <Button
                             type="submit"
-                            primary
                             fullWidth
                             className={
                               (props.isValid && props.dirty) ? classes.button : classes.disable

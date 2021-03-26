@@ -1,3 +1,4 @@
 import { Trainee } from './Trainee';
+import { Login } from './Login';
 
-export { Trainee };
+export { Trainee, Login };

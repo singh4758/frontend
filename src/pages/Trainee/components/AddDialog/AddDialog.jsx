@@ -6,11 +6,28 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Grid } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 import { Formik, Form } from 'formik';
+import PropTypes from 'prop-types';
 import * as Yup from 'yup';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import EmailIcon from '@material-ui/icons/Email';
+import PersonIcon from '@material-ui/icons/Person';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import { TextFieldWrapper as TextField } from '../TextFieldWrapper';
 
-export default class AddDialog extends PureComponent {
+const style = () => ({
+  button: {
+    backgroundColor: 'purple',
+    color: 'white',
+  },
+  disable: {
+    backgroundColor: 'lightgray',
+    color: 'gray',
+  },
+});
+
+class AddDialog extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,6 +75,7 @@ export default class AddDialog extends PureComponent {
 
   render() {
     const { open } = this.state;
+    const { classes } = this.props;
     return (
       <>
         <Button onClick={this.handleOpen} style={{ border: '1px solid blue', color: 'blue' }}>ADD TRAINEE</Button>
@@ -81,7 +99,14 @@ export default class AddDialog extends PureComponent {
                         <Grid container justify="center">
                           <TextField
                             name="name"
-                            placeholder="Enter Name"
+                            label="Name*"
+                            InputProps={{
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <PersonIcon />
+                                </InputAdornment>
+                              ),
+                            }}
                           />
                         </Grid>
                       </Grid>
@@ -89,7 +114,14 @@ export default class AddDialog extends PureComponent {
                         <Grid container justify="center">
                           <TextField
                             name="email"
-                            placeholder="Enter Email"
+                            label="Email*"
+                            InputProps={{
+                              startAdornment: (
+                                <InputAdornment position="start">
+                                  <EmailIcon />
+                                </InputAdornment>
+                              ),
+                            }}
                           />
                         </Grid>
                       </Grid>
@@ -100,7 +132,14 @@ export default class AddDialog extends PureComponent {
                               <TextField
                                 type="password"
                                 name="password"
-                                placeholder="Enter Password"
+                                label="Password*"
+                                InputProps={{
+                                  startAdornment: (
+                                    <InputAdornment position="start">
+                                      <VisibilityOffIcon />
+                                    </InputAdornment>
+                                  ),
+                                }}
                               />
                             </Grid>
                           </Grid>
@@ -109,7 +148,14 @@ export default class AddDialog extends PureComponent {
                               <TextField
                                 type="password"
                                 name="passwordConfirm"
-                                placeholder="Enter Password"
+                                label="Confirm Password*"
+                                InputProps={{
+                                  startAdornment: (
+                                    <InputAdornment position="start">
+                                      <VisibilityOffIcon />
+                                    </InputAdornment>
+                                  ),
+                                }}
                               />
                             </Grid>
                           </Grid>
@@ -118,7 +164,13 @@ export default class AddDialog extends PureComponent {
                     </Grid>
                     <DialogActions>
                       <Button onClick={this.handleClose} style={{ color: 'blue' }}>Cancel</Button>
-                      <Button type="submit" disabled={!(props.isValid && props.dirty)}>
+                      <Button
+                        type="submit"
+                        disabled={!(props.isValid && props.dirty)}
+                        className={
+                          !(props.isValid && props.dirty) ? classes.disable : classes.button
+                        }
+                      >
                         Submit
                       </Button>
                     </DialogActions>
@@ -132,3 +184,9 @@ export default class AddDialog extends PureComponent {
     );
   }
 }
+
+AddDialog.propTypes = {
+  classes: PropTypes.instanceOf({}).isRequired,
+};
+
+export default withStyles(style)(AddDialog);

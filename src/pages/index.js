@@ -1,4 +1,3 @@
-import { TextFieldDemo } from './TextFieldDemo';
-import { SliderFieldDemo } from './SliderFieldDemo';
+import { Trainee } from './Trainee';
 
-export { TextFieldDemo, SliderFieldDemo };
+export { Trainee };

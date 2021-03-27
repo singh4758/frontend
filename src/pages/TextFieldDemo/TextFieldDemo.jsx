@@ -1,37 +1,44 @@
-import { React } from 'react';
-import TextField from '@material-ui/core/TextField';
-import { useField } from 'formik';
-import PropTypes from 'prop-types';
+import { React, PureComponent } from 'react';
+import { Grid, TextField } from '@material-ui/core';
+import SliderFieldDemo from './SliderField/SliderFieldDemo';
 
-const TextFieldWrapper = ({
-  name,
-  ...otherProps
-}) => {
-  const [field, mata] = useField(name);
-  const configureTextField = {
-    ...otherProps,
-    ...field,
-    variant: 'outlined',
-  };
-
-  if (mata && mata.touched && mata.error) {
-    configureTextField.error = true;
-    configureTextField.helperText = mata.error;
+export default class TextFieldDemo extends PureComponent {
+  render() {
+    return (
+      <Grid container spacing={2} style={{ border: '1px solid black', margin: '20px', maxWidth: '95vw' }}>
+        <Grid item xs={12}>
+          <Grid container justify="center">
+            <SliderFieldDemo />
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <h3>This is Disabled Input</h3>
+          <TextField
+            fullWidth
+            variant="outlined"
+            defaultValue="Disabled Input"
+            disabled
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <h3>A valid Input</h3>
+          <TextField
+            fullWidth
+            variant="outlined"
+            defaultValue="Accessible"
+            style={{ border: '1px solid orange' }}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <h3>An Input With Error</h3>
+          <TextField
+            fullWidth
+            variant="outlined"
+            defaultValue="101"
+            error
+          />
+        </Grid>
+      </Grid>
+    );
   }
-  return (
-    <TextField
-      InputLabelProps={{
-        shrink: true,
-      }}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...configureTextField}
-      fullWidth
-    />
-  );
-};
-
-TextFieldWrapper.propTypes = {
-  name: PropTypes.string.isRequired,
-};
-
-export default TextFieldWrapper;
+}

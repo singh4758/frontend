@@ -1,12 +1,10 @@
 import React from 'react';
-import { Login } from './pages';
-import { Navbar } from './layouts';
+import { TextFieldDemo } from './pages/TextFieldDemo';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Login />
+      <TextFieldDemo />
     </div>
   );
 }

@@ -1,3 +1,3 @@
-import TextFieldWrapper from './TextFieldDemo';
+import TextFieldDemo from './TextFieldDemo';
 
-export { TextFieldWrapper };
+export { TextFieldDemo };

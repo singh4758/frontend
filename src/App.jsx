@@ -10,6 +10,7 @@ import {
   InputFieldDemo,
   TestComponent,
   TextFieldDemo,
+  Error,
 } from './pages';
 
 import { Navbar } from './layouts/index';
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/inputDemo" component={InputFieldDemo} />
           <Route exact path="/testComponent" component={TestComponent} />
           <Route exact path="/textFieldDemo" component={TextFieldDemo} />
+          <Route path="/" component={Error} />
         </Switch>
       </div>
     </BrowserRouter>

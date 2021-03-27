@@ -1,15 +1,18 @@
 import { React, PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
   Grid,
-  Button,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = () => ({
   button: {
+    textDecoration: 'none',
+    padding: 10,
+    display: 'inline-block',
     color: 'white',
     '&:hover': {
       backgroundColor: 'darkBlue',
@@ -30,19 +33,19 @@ class Navbar extends PureComponent {
             <Grid item xs={6}>
               <Grid container justify="center" alignItems="center" spacing={2}>
                 <Grid item>
-                  <Button className={classes.button}>TRAINEE</Button>
+                  <Link to="/" className={classes.button}>TRAINEE</Link>
                 </Grid>
                 <Grid item>
-                  <Button className={classes.button}>TEXTFIELD DEMO</Button>
+                  <Link to="/textFieldDemo" className={classes.button}>TEXTFIELD DEMO</Link>
                 </Grid>
                 <Grid item>
-                  <Button className={classes.button}>INPUT DEMO</Button>
+                  <Link to="/inputDemo" className={classes.button}>INPUT DEMO</Link>
                 </Grid>
                 <Grid item>
-                  <Button className={classes.button}>CHILDREN DEMO</Button>
+                  <Link to="/testComponent" className={classes.button}>CHILDREN DEMO</Link>
                 </Grid>
                 <Grid item>
-                  <Button className={classes.button}>LOGOUT</Button>
+                  <Link to="/" className={classes.button}>LOGOUT</Link>
                 </Grid>
               </Grid>
             </Grid>

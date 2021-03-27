@@ -1,5 +1,6 @@
 import React from 'react';
-import { Login, Navbar } from './pages';
+import { Login } from './pages';
+import { Navbar } from './layouts';
 
 function App() {
   return (

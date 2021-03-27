@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { Grid } from '@material-ui/core';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { TextFieldWrapper as TextField } from '../TextFieldWrapper';
+import { TextFieldWrapper as TextField } from '../../../TextFieldDemo';
 
 export default class AddDialog extends PureComponent {
   constructor(props) {

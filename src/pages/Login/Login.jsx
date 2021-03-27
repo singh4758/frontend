@@ -7,7 +7,7 @@ import { Formik, Form } from 'formik';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import EmailIcon from '@material-ui/icons/Email';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
-import { TextFieldWrapper as TextField } from '../Trainee/components/TextFieldWrapper';
+import { TextFieldWrapper as TextField } from '../TextFieldDemo';
 
 const style = (theme) => ({
   root: {

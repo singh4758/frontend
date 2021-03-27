@@ -1,11 +1,11 @@
 import React from 'react';
-import { SliderFieldDemo, TextFieldDemo } from './pages';
+import { Login, Navbar } from './pages';
 
 function App() {
   return (
     <div className="App">
-      <SliderFieldDemo />
-      <TextFieldDemo />
+      <Navbar />
+      <Login />
     </div>
   );
 }

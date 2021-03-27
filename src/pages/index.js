@@ -1,4 +1,5 @@
-import { TextFieldDemo } from './TextFieldDemo';
-import { SliderFieldDemo } from './SliderFieldDemo';
+import { Trainee } from './Trainee';
+import { Login } from './Login';
+import { Navbar } from './components';
 
-export { TextFieldDemo, SliderFieldDemo };
+export { Trainee, Login, Navbar };

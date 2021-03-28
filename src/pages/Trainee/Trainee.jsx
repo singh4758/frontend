@@ -1,13 +1,14 @@
 import { Grid } from '@material-ui/core';
 import { React, PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import { AddDialog } from './components';
+import { AddDialog, Tables } from './components';
 
 export default class Trainee extends PureComponent {
   render() {
     return (
-      <div>
+      <>
         <AddDialog />
+        <Tables />
         <Grid container spacing={2}>
           <ul>
             <li>
@@ -47,7 +48,7 @@ export default class Trainee extends PureComponent {
             </li>
           </ul>
         </Grid>
-      </div>
+      </>
     );
   }
 }

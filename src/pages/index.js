@@ -1,4 +1,16 @@
+import { Trainee, Player } from './Trainee';
+import { Login } from './Login';
+import { InputFieldDemo } from './InputDemo';
+import { TestComponent } from './ChildrenDemo';
 import { TextFieldDemo } from './TextFieldDemo';
-import { SliderFieldDemo } from './SliderFieldDemo';
+import { Error } from './Error';
 
-export { TextFieldDemo, SliderFieldDemo };
+export {
+  Trainee,
+  Login,
+  InputFieldDemo,
+  TestComponent,
+  TextFieldDemo,
+  Error,
+  Player,
+};

@@ -1,23 +1,44 @@
 import { React, PureComponent } from 'react';
-import { TextField } from '../../components';
+import { Grid, TextField } from '@material-ui/core';
+import SliderFieldDemo from './SliderField/SliderFieldDemo';
 
 export default class TextFieldDemo extends PureComponent {
   render() {
     return (
-      <div className="TextFieldDemo">
-        <div>
-          <h5>This is disabled Input</h5>
-          <TextField disabled />
-        </div>
-        <div>
-          <h5>A Valid Input</h5>
-          <TextField value="Accessible" />
-        </div>
-        <div>
-          <h5>A Input with Error</h5>
-          <TextField error="101" />
-        </div>
-      </div>
+      <Grid container spacing={2} style={{ border: '1px solid black', margin: '20px', maxWidth: '95vw' }}>
+        <Grid item xs={12}>
+          <Grid container justify="center">
+            <SliderFieldDemo />
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <h3>This is Disabled Input</h3>
+          <TextField
+            fullWidth
+            variant="outlined"
+            defaultValue="Disabled Input"
+            disabled
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <h3>A valid Input</h3>
+          <TextField
+            fullWidth
+            variant="outlined"
+            defaultValue="Accessible"
+            style={{ border: '1px solid orange' }}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <h3>An Input With Error</h3>
+          <TextField
+            fullWidth
+            variant="outlined"
+            defaultValue="101"
+            error
+          />
+        </Grid>
+      </Grid>
     );
   }
 }

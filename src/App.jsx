@@ -11,7 +11,6 @@ import {
   TestComponent,
   TextFieldDemo,
   Error,
-  Player,
 } from './pages';
 
 import { Navbar } from './layouts/index';
@@ -20,14 +19,13 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="App">
+      <div className="App" style={{ marginTop: 100 }}>
         <Switch>
           <Route exact path="/" component={Trainee} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/inputDemo" component={InputFieldDemo} />
           <Route exact path="/testComponent" component={TestComponent} />
           <Route exact path="/textFieldDemo" component={TextFieldDemo} />
-          <Route exact path="/player/:id" component={Player} />
           <Route path="/" component={Error} />
         </Switch>
       </div>

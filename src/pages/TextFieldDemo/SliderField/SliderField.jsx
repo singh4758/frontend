@@ -31,7 +31,6 @@ export default class SliderField extends PureComponent {
     const { index } = this.state;
     return (
       <img
-        style={{ width: '90%' }}
         alt={defaultAlt}
         height={height}
         src={(banners && banners[index]) ? banners[index] : defaultSrc}

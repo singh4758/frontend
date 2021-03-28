@@ -24,13 +24,13 @@ class Navbar extends PureComponent {
   render() {
     const { classes } = this.props;
     return (
-      <AppBar>
+      <AppBar position="static" style={{ marginBottom: 20 }}>
         <Toolbar>
           <Grid container justify="space-between" alignItems="center">
             <Grid item xs={2}>
               <h3>Trainee Portal</h3>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={8}>
               <Grid container justify="center" alignItems="center" spacing={2}>
                 <Grid item>
                   <Link to="/" className={classes.button}>TRAINEE</Link>

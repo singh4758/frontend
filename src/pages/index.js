@@ -1,4 +1,4 @@
-import { Trainee } from './Trainee';
+import { Trainee, Player } from './Trainee';
 import { Login } from './Login';
 import { InputFieldDemo } from './InputDemo';
 import { TestComponent } from './ChildrenDemo';
@@ -12,4 +12,5 @@ export {
   TestComponent,
   TextFieldDemo,
   Error,
+  Player,
 };

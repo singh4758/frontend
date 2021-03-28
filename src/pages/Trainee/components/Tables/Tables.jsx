@@ -1,8 +1,8 @@
 import { React, PureComponent } from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import {
   Table,
   TableHead,
-  //   Tablebody,
   TableRow,
   TableCell,
   TableContainer,
@@ -25,10 +25,10 @@ export default class Tables extends PureComponent {
             </TableHead>
             <TableBody>
               {data.map((datas) => (
-                <TableRow key={datas.name}>
+                <StyledTableRow key={datas.name}>
                   <TableCell>{datas.name}</TableCell>
                   <TableCell>{datas.email}</TableCell>
-                </TableRow>
+                </StyledTableRow>
               ))}
             </TableBody>
           </Table>
@@ -37,3 +37,11 @@ export default class Tables extends PureComponent {
     );
   }
 }
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
